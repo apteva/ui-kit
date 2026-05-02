@@ -1,0 +1,14 @@
+{
+  "name": "@apteva/ui-kit",
+  "version": "0.1.0",
+  "description": "Shared visual primitives for apteva apps + integrations. Components compose these so cards, lists, and headers look identical across the platform.",
+  "type": "module",
+  "main": "src/index.ts",
+  "scripts": {
+    "build": "bun run scripts/build.ts"
+  },
+  "peerDependencies": {
+    "react": "^19",
+    "react/jsx-runtime": "^19"
+  }
+}

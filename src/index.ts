@@ -12,3 +12,8 @@ export { StatusPill } from "./StatusPill";
 export type { StatusPillVariant } from "./StatusPill";
 export { Avatar, AvatarStack } from "./Avatar";
 export { DataList } from "./DataList";
+export { KPI } from "./KPI";
+export type { KPITone } from "./KPI";
+export { Row } from "./Row";
+export { Timeline } from "./Timeline";
+export type { TimelineEvent, TimelineTone } from "./Timeline";

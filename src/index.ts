@@ -6,6 +6,9 @@
 
 export { Card } from "./Card";
 export { CardHeader } from "./CardHeader";
+export type { CardVendor } from "./CardHeader";
+export { useColorMode } from "./useColorMode";
+export type { ColorMode } from "./useColorMode";
 export { StatusDot } from "./StatusDot";
 export type { StatusDotVariant } from "./StatusDot";
 export { StatusPill } from "./StatusPill";

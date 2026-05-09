@@ -9,6 +9,6 @@
   },
   "peerDependencies": {
     "react": "^19",
-    "react/jsx-runtime": "^19"
+    "lucide-react": "^0.400.0"
   }
 }

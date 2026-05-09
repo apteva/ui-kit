@@ -4,6 +4,9 @@
   "workspaces": {
     "": {
       "name": "@apteva/ui-kit",
+      "dependencies": {
+        "lucide-react": "^0.400.0",
+      },
       "peerDependencies": {
         "lucide-react": "^0.400.0",
         "react": "^19",

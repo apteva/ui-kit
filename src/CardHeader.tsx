@@ -47,7 +47,7 @@ export interface CardVendor {
   color?: string | { light: string; dark: string };
 }
 
-interface CardHeaderProps {
+export interface CardHeaderProps {
   /** Legacy single-line logo slot. Ignored when `vendor` is set. */
   logo?: ReactNode;
   /** Vendor branding — renders as a brand row above the title. */
@@ -60,9 +60,12 @@ interface CardHeaderProps {
   status?: { label: string; variant?: StatusDotVariant };
   /** Right-side trailing affordance, e.g. "View on GitHub →". */
   action?: { label: string; href: string };
+  /** Arbitrary right-side controls for app cards that need more than
+   * the standard status/action pair. */
+  right?: ReactNode;
 }
 
-export function CardHeader({ logo, vendor, title, subtitle, status, action }: CardHeaderProps) {
+export function CardHeader({ logo, vendor, title, subtitle, status, action, right }: CardHeaderProps) {
   // Subscribe to the dashboard's data-mode attribute so the vendor
   // pill picks the right brand color when the mode flips. Cheap —
   // the hook is a single MutationObserver shared across CardHeaders.
@@ -76,7 +79,10 @@ export function CardHeader({ logo, vendor, title, subtitle, status, action }: Ca
             ≈ 28px row) so it adds presence without adding bulk. */}
         <div className="flex items-center justify-between gap-2 px-4 pt-2.5 pb-1">
           <VendorPill vendor={vendor} mode={mode} />
-          {action && <HeaderAction action={action} />}
+          <div className="flex shrink-0 items-center gap-2">
+            {right}
+            {action && <HeaderAction action={action} />}
+          </div>
         </div>
         {/* Title row — full width for the entity name + subtitle on
             the left, status dot on the right. Padding tuned to feel
@@ -118,6 +124,7 @@ export function CardHeader({ logo, vendor, title, subtitle, status, action }: Ca
         )}
       </div>
       {status && <StatusDot variant={status.variant}>{status.label}</StatusDot>}
+      {right}
       {action && <HeaderAction action={action} />}
     </div>
   );

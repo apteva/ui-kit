@@ -6,7 +6,17 @@
 
 export { Card } from "./Card";
 export { CardHeader } from "./CardHeader";
-export type { CardVendor } from "./CardHeader";
+export type { CardHeaderProps, CardVendor } from "./CardHeader";
+export { AppCardHeader } from "./AppCardHeader";
+export type { AppCardHeaderProps } from "./AppCardHeader";
+export { AppIcon, AppIdentityProvider, useAppIdentity } from "./AppIdentity";
+export type {
+  AppIconProps,
+  AppIconSize,
+  AppIconStyle,
+  AppIdentity,
+  AppIdentityProviderProps,
+} from "./AppIdentity";
 export { useColorMode } from "./useColorMode";
 export type { ColorMode } from "./useColorMode";
 export { StatusDot } from "./StatusDot";

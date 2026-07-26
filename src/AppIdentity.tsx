@@ -98,6 +98,7 @@ export function AppIcon({
 
   return (
     <span
+      key={src || name}
       className={`relative inline-flex shrink-0 items-center justify-center overflow-hidden ${
         outerSize[size]
       } ${framed ? "rounded-md bg-bg-input" : ""} ${className}`}

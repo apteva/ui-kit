@@ -30,3 +30,6 @@ export type { KPITone } from "./KPI";
 export { Row } from "./Row";
 export { Timeline } from "./Timeline";
 export type { TimelineEvent, TimelineTone } from "./Timeline";
+
+export { AgentMark, AGENT_ICONS, AGENT_ICON_COLORS, suggestedAgentIcon } from "./AgentMark";
+export type { AgentIconId, AgentIconColor } from "./AgentMark";

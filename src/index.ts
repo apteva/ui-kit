@@ -33,3 +33,7 @@ export type { TimelineEvent, TimelineTone } from "./Timeline";
 
 export { AgentMark, AGENT_ICONS, AGENT_ICON_COLORS, suggestedAgentIcon } from "./AgentMark";
 export type { AgentIconId, AgentIconColor } from "./AgentMark";
+
+export type { AppHost, HostUI, HostUIRequest, ChatAssistantLauncher } from "./AppHost";
+export { connectAppHost, isHostUIRequest } from "./AppHost";
+export type { AppHostConnection } from "./AppHost";

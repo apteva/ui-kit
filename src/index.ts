@@ -37,3 +37,8 @@ export type { AgentIconId, AgentIconColor } from "./AgentMark";
 export type { AppHost, HostUI, HostUIRequest, ChatAssistantLauncher } from "./AppHost";
 export { connectAppHost, isHostUIRequest } from "./AppHost";
 export type { AppHostConnection } from "./AppHost";
+
+export { ThemeProvider, useTheme } from './ThemeProvider';
+export type { ThemeProviderProps, ThemeContextValue } from './ThemeProvider';
+export { initializeTheme, createThemeController, parseAppearance, resolveThemeMode, APPEARANCE_STORAGE_KEY } from './theme';
+export type { Appearance, ThemeName, ThemeMode, ResolvedMode, ThemeSnapshot, ThemeOptions, ThemeController } from './theme';

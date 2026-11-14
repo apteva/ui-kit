@@ -1,11 +1,16 @@
 {
   "name": "@apteva/ui-kit",
-  "version": "0.3.0",
+  "version": "0.4.0",
   "description": "Shared visual primitives for apteva apps + integrations. Components compose these so cards, lists, and headers look identical across the platform.",
   "type": "module",
-  "main": "src/index.ts",
+  "main": "./dist/ui-kit.mjs",
   "scripts": {
-    "build": "bun run scripts/build.ts"
+    "build": "bun run scripts/build.ts",
+    "test": "bun test",
+    "typecheck": "tsc --noEmit",
+    "prepublishOnly": "bun run validate",
+    "test:browser": "playwright test",
+    "validate": "bun run typecheck && bun test && bun run build && bun run test:browser"
   },
   "peerDependencies": {
     "react": "^19",
@@ -15,7 +20,42 @@
     "lucide-react": "^0.400.0"
   },
   "devDependencies": {
+    "@tailwindcss/cli": "4.1.0",
     "@types/react": "^19.2.14",
-    "@types/react-dom": "^19.2.3"
+    "@types/react-dom": "^19.2.3",
+    "tailwindcss": "4.1.0",
+    "typescript": "5.9.3",
+    "@playwright/test": "1.58.2",
+    "postcss": "8.5.6",
+    "react": "19.2.4",
+    "react-dom": "19.2.4",
+    "@types/bun": "^1.3.0"
+  },
+  "module": "./dist/ui-kit.mjs",
+  "types": "./dist/types/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/types/index.d.ts",
+      "import": "./dist/ui-kit.mjs"
+    },
+    "./theme": {
+      "types": "./dist/types/theme.d.ts",
+      "import": "./dist/theme.mjs"
+    },
+    "./theme.css": "./dist/theme.css",
+    "./styles.css": "./dist/styles.css",
+    "./tailwind.css": "./dist/tailwind.css"
+  },
+  "files": [
+    "dist",
+    "README.md",
+    "CHANGELOG.md"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/apteva/ui-kit.git"
+  },
+  "publishConfig": {
+    "access": "public"
   }
 }

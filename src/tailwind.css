@@ -1,0 +1,43 @@
+/* Optional Tailwind v4 bridge. Runtime theme.css is imported separately. */
+@theme inline {
+  --color-bg: var(--bg);
+  --color-bg-card: var(--bg-card);
+  --color-bg-subtle: var(--bg-subtle);
+  --color-bg-hover: var(--bg-hover);
+  --color-bg-input: var(--bg-input);
+  --color-bg-overlay: var(--bg-overlay);
+
+  --color-text: var(--text);
+  --color-text-muted: var(--text-muted);
+  --color-text-dim: var(--text-dim);
+
+  --color-border: var(--border);
+  --color-border-subtle: var(--border-subtle);
+  --color-border-strong: var(--border-strong);
+
+  --color-accent: var(--accent);
+  --color-accent-hover: var(--accent-hover);
+  --color-accent-muted: var(--accent-muted);
+
+  --color-success: var(--success);
+  --color-warn: var(--warn);
+  --color-error: var(--error);
+  --color-info: var(--info);
+  --color-recurring: var(--recurring);
+  --color-activity-thought: var(--activity-thought);
+
+  /* Back-compat aliases — the codebase has ~40 sites using the old
+   * names (text-red, bg-green, text-yellow, text-blue). They map onto
+   * the same semantic tokens so they recolor across themes too. */
+  --color-red: var(--error);
+  --color-green: var(--success);
+  --color-yellow: var(--warn);
+  --color-blue: var(--info);
+
+  --font-sans: var(--font-base);
+  --font-mono: var(--font-mono-fixed);
+
+}
+
+
+/* Geometry uses runtime --radius-* variables from theme.css. */
